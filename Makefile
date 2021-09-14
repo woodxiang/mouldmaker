@@ -32,8 +32,8 @@ all: demoapp.js
 	@echo $(MAKE_VERSION)
 	@echo $(EXPORT_FUNCTIONS_STRING)
 
-demoapp.js: src/main.o
-	$(CXX) $(CPPFLAGS) $(CFLAGS) -o $@ src/main.o -s EXPORTED_FUNCTIONS='[$(EXPORT_FUNCTIONS_STRING)]' -L$(OpenCASCADE_LIB_DIR) -L$(EMSDK_LIB_DIR) $(LIBS)
+demoapp.js: src/main.o src/my_class.o src/model_base.o
+	$(CXX) $(CPPFLAGS) $(CFLAGS) -o $@ src/main.o src/my_class.o src/model_base.o -s EXPORTED_FUNCTIONS='[$(EXPORT_FUNCTIONS_STRING)]' -L$(OpenCASCADE_LIB_DIR) -L$(EMSDK_LIB_DIR) $(LIBS)
 
 clean:
 	$(RM) -r src/*.o *.wasm *.js

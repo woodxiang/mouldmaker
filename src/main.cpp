@@ -25,7 +25,7 @@ extern "C"
   }
 }
 
-EMSCRIPTEN_BINDINGS(my_module)
+EMSCRIPTEN_BINDINGS(main_module)
 {
   function("lerp", &lerp);
 }

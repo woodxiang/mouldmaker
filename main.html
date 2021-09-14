@@ -93,6 +93,13 @@
         console.log("All Ready.");
         console.log(_Sum(10, 11));
         console.log("lerp result: " + Module.lerp(1, 2, 0.5));
+        var instance = new Module.MyClass(10, "hello");
+        instance.incrementX();
+
+        Module.MyClass.getStringFromInstance(instance);
+        instance.delete();
+
+        console.log(Module.ModelBase.test_method(10));
       };
     </script>
     <script async type="text/javascript" src="demoapp.js"></script>

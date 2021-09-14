@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="status">Downloading...</div>
-    <div >
+    <div>
       <progress value="0" max="100" id="progress" hidden="1"></progress>
     </div>
 
@@ -76,6 +76,9 @@
               : "All downloads complete."
           );
         },
+        onRuntimeInitialized: function () {
+          console.log("lerp result: " + Module.lerp(1, 2, 0.5));
+        },
       };
       Module.setStatus("Downloading...");
       window.onerror = function (event) {
@@ -86,9 +89,11 @@
         };
       };
 
-      window.allReady = function(){
+      window.allReady = function () {
         console.log("All Ready.");
-      }
+        console.log(_Sum(10, 11));
+        console.log("lerp result: " + Module.lerp(1, 2, 0.5));
+      };
     </script>
     <script async type="text/javascript" src="demoapp.js"></script>
   </body>

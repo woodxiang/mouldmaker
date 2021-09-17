@@ -15,7 +15,8 @@
             "name": "wasm",
             "includePath": [
                 "${workspaceFolder}/**",
-                "~/git/emsdk/upstream/emscripten/system/include"
+                "~/git/emsdk/upstream/emscripten/system/include",
+                "/usr/local/include/opencascade"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",

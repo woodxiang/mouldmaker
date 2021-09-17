@@ -21,17 +21,17 @@ int main()
  	const Standard_Real radius = 10.0;
 	const Standard_Real height = 25.0;
 
-	TopoDS_Shape cylindar = BRepPrimAPI_MakeCylinder(radius, height);
+	TopoDS_Shape cylinder = BRepPrimAPI_MakeCylinder(radius, height);
 	TopoDS_Shape box = BRepPrimAPI_MakeBox(20, 20, 20);
 
-	gp_Trsf trsf;
-	trsf.SetTranslation(gp_Vec(-10, -10, -10));
+	gp_Trsf transfer;
+	transfer.SetTranslation(gp_Vec(-10, -10, -10));
 
-	BRepBuilderAPI_Transform transform(box, trsf);
+	BRepBuilderAPI_Transform transform(box, transfer);
 
 	box = transform.Shape();
 
-	TopoDS_Shape shape = BRepAlgoAPI_Fuse(cylindar, box);
+	TopoDS_Shape shape = BRepAlgoAPI_Fuse(cylinder, box);
 
 	// TopoDS_Shape shape = BRepPrimAPI_MakeSphere(radius);
 
